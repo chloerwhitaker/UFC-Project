@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[12]:
+# ## Acquire and Prepare
+
+# In[1]:
 
 
 # Function to wrangle the UFC data
 
 
-# In[8]:
+# In[2]:
 
 
 def get_n_prep_ufc(): 
@@ -83,16 +85,107 @@ def get_n_prep_ufc():
     
 
 
-# In[9]:
+# In[3]:
 
 
 # ufc_cleaned = get_n_prep_ufc()
 
 
-# In[11]:
+# In[4]:
 
 
 # ufc_cleaned.head()
+
+
+# ## Split Data
+
+# In[5]:
+
+
+def train_validate_test_split(ufc_cleaned):
+    '''
+    This function takes in a dataframe (df) and returns 3 dfs
+    (train, validate, and test) split 20%, 24%, 56% respectively. 
+    
+    Also takes in a random seed for replicating results.  
+    '''
+    
+    from sklearn.model_selection import train_test_split
+     
+    train_and_validate, test = train_test_split(
+        ufc_cleaned, test_size=0.2, random_state=123, stratify=ufc_cleaned.outcome
+    )
+    train, validate = train_test_split(
+        train_and_validate,
+        test_size=0.3,
+        random_state=123,
+        stratify=train_and_validate.outcome,
+    )
+    return train, validate, test
+
+
+# In[6]:
+
+
+# train, validate, test = train_validate_test_split(ufc_cleaned)
+
+
+# In[7]:
+
+
+# train.head(1)
+
+
+# In[8]:
+
+
+def get_prep_n_split_ufc_data():
+    ''' 
+    This function runs get_n_prep_ufc and train_validate_test_split functions.
+    It takes in the original df and returns the split dfs train, validate, test (in that order).
+    '''
+    
+    # imports
+    import pandas as pd
+    # Ignore Warnings
+    import warnings
+    warnings.filterwarnings("ignore")
+    from sklearn.model_selection import train_test_split
+    
+    
+    ufc_cleaned = get_n_prep_ufc()
+    train, validate, test = train_validate_test_split(ufc_cleaned)
+    return train, validate, test
+
+
+# In[9]:
+
+
+train, validate, test = get_prep_n_split_ufc_data()
+
+
+# In[10]:
+
+
+train.head(1)
+
+
+# In[14]:
+
+
+# train.shape
+
+
+# In[15]:
+
+
+# validate.shape
+
+
+# In[16]:
+
+
+# test.shape
 
 
 # In[ ]:
