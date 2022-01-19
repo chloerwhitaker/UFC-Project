@@ -23,6 +23,7 @@ A list of the variables in the dataframe and their meaning.
     - Merge all three dfs together
     - Split
     - Initial Questions: 
+        - 
 - Explore
     - Make new columns with the difference between the two fighter's stats
     - Do corr test to see what columns corr to the target (outcome)
@@ -32,7 +33,9 @@ A list of the variables in the dataframe and their meaning.
             - Compare their current stats side-by-side to predict who will win their big grudge match
             - Use visuals and statits to do this
 - Model
+    - Scale data
     - Develop classification model that will predict the outcomes of future fight cards
+        - Use the differences in stats between the two fighters and assign it to just one fighter like: fighter1 +23 average strikes, fighter1 -2 average takedown defense, etc. Then the target will be outcome (fighter1 or fighter2). The model will associate positive averages with fighter1 and negative averages with fighter2 winning.
 - Refine (Report)
 - Deliver
     - README.md
