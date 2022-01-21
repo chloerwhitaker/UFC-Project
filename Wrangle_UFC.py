@@ -3,13 +3,21 @@
 
 # ## Acquire and Clean
 
-# In[1]:
+# In[7]:
+
+
+# Remove Limits On Viewing Dataframes
+import pandas as pd
+pd.set_option('display.max_columns', None)
+
+
+# In[8]:
 
 
 # Function to wrangle the UFC data
 
 
-# In[2]:
+# In[9]:
 
 
 def get_n_prep_ufc(): 
@@ -85,21 +93,28 @@ def get_n_prep_ufc():
     
 
 
-# In[3]:
+# In[10]:
 
 
-# ufc_cleaned = get_n_prep_ufc()
+
+ufc_cleaned = get_n_prep_ufc()
 
 
-# In[4]:
+# In[11]:
 
 
-# ufc_cleaned.head()
+ufc_cleaned.head()
+
+
+# In[22]:
+
+
+# ufc_cleaned.outcome
 
 
 # ## Prepare
 
-# In[5]:
+# In[24]:
 
 
 def combined_ufc():
@@ -182,23 +197,31 @@ def combined_ufc():
     # Rename Columns 
     final_df = final_df.rename(columns = {'event_name1': 'event_name', 'outcome1': 'outcome', 'w1': 'win', 'l1': 'loss', 'd1': 'draw', 'nc1': 'no_contest'})
     
+    # rename the labels in outcome to be human readable 
+    ufc_cleaned['outcome'].replace({'win': 'fighter1', 'loss': 'fighter2'}, inplace=True)
     
     return final_df
 
 
-# In[85]:
+# In[26]:
 
 
 # final_df = combined_ufc()
 
 
-# In[86]:
+# In[25]:
 
 
 # final_df.head()
 
 
-# In[9]:
+# In[27]:
+
+
+# final_df.outcome
+
+
+# In[18]:
 
 
 def get_ufc_combined_data():
@@ -230,19 +253,25 @@ def get_ufc_combined_data():
     return df
 
 
-# In[87]:
+# In[28]:
 
 
 # df = get_ufc_combined_data()
 
 
-# In[88]:
+# In[20]:
 
 
 # df.head(1)
 
 
-# In[1]:
+# In[29]:
+
+
+# df.outcome
+
+
+# In[19]:
 
 
 def ufc_stats_difference():
@@ -295,7 +324,7 @@ def ufc_stats_difference():
     return final_df, fighter_stat_diff
 
 
-# In[2]:
+# In[30]:
 
 
 # final_df, fighter_stat_diff = ufc_stats_difference()
