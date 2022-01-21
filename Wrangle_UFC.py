@@ -242,7 +242,7 @@ def get_ufc_combined_data():
 # df.head(1)
 
 
-# In[46]:
+# In[1]:
 
 
 def ufc_stats_difference():
@@ -264,7 +264,7 @@ def ufc_stats_difference():
     warnings.filterwarnings("ignore")
     
     # read .csv
-    ufc = pd.read_csv('UFC_Fighters_Combined.csv')
+    final_df = pd.read_csv('UFC_Fighters_Combined.csv')
     
     # Calculate the difference in stats between fighter1 and fighter2. Save to new column. 
     final_df['weight_diff'] = final_df.weight_f1 - final_df.weight_f2
@@ -295,7 +295,7 @@ def ufc_stats_difference():
     return final_df, fighter_stat_diff
 
 
-# In[89]:
+# In[2]:
 
 
 # final_df, fighter_stat_diff = ufc_stats_difference()
