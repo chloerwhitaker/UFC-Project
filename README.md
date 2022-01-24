@@ -21,7 +21,16 @@ A list of the variables in the dataframe and their meaning.
     - To do this I'll create a column that concats the fighter1 and fighter2 columns together. I'll also do the reverse of that where the names are listed fighter2/fighter1. I'll write a for loop that prints an array of fighter1's stats and finds and prints the corresponding fighter2's stats. It will then join them together and store the data in a df.
     - Split
     - Initial Questions: 
-        - 
+
+        1) Does fighter1 having a higher striking defense average than fighter2 correlate to fighter 1 winning. 
+
+        2) Does fighter1 having a higher takedown defense average than fighter2 correlate to fighter 1 winning. 
+
+        3) Does fighter1 having a higher striking accuracy average than fighter2 correlate to fighter 1 winning. 
+
+        4) Does fighter1 having a higher takedown accuracy average than fighter2 correlate to fighter 1 winning. 
+
+        5) Does fighter2 being younger than fighter1 correlate to fighter 2 winning. 
 - Explore
     - Make new columns with the difference between the two fighter's stats
     - Do corr test to see what columns corr to the target (outcome)
