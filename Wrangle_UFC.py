@@ -386,6 +386,106 @@ def get_ufc_stats_diff_data():
 # df.head()
 
 
+# In[36]:
+
+
+def get_colby(): 
+   
+    # imports
+    import pandas as pd
+    import numpy as np
+    # Ignore Warnings
+    import warnings
+    warnings.filterwarnings("ignore")
+    
+    # read .csv
+    colby = pd.read_csv('Last 10 Colby Fights.csv')
+    
+    # Change data types
+    colby['age_days_f2'] = colby.age_days_f2.astype(float) 
+    
+    # Calculate the difference in stats between fighter1 and fighter2. Save to new column. 
+    colby['weight_diff'] = colby.weight_f1 - colby.weight_f2
+    colby['reach_diff'] = colby.reach_f1 - colby.reach_f2
+    colby['strike_diff'] = colby.strikes_f1 - colby.strikes_f2
+    colby['strike_acc_diff'] = colby.strike_acc_f1 - colby.strike_acc_f2
+    colby['strikes_absorbed_diff'] = colby.strikes_absorbed_f1 - colby.strikes_absorbed_f2
+    colby['strikes_defense_diff'] = colby.strike_defense_f1 - colby.strike_defense_f2
+    colby['strikes_defense_diff'] = colby.strike_defense_f1 - colby.strike_defense_f2
+    colby['takedown_attempts_diff'] = colby.takedowns_f1 - colby.takedowns_f2
+    colby['takedown_acc_diff'] = colby.takedown_acc_f1 - colby.takedown_acc_f2
+    colby['takedown_defense_diff'] = colby.takedown_def_f1 - colby.takedown_def_f2
+    colby['submission_attempt_diff'] = colby.sub_attempt_f1 - colby.sub_attempt_f2
+    colby['age_diff'] = colby.age_days_f1 - colby.age_days_f2
+    colby['height_diff'] = colby.height_in_f1 - colby.height_in_f2
+
+    # Create df with desired difference columns
+    colby_diff = colby[['event_name', 'fighter1', 'fighter2', 'outcome', 'stance_f1', 'stance_f2', 'weight_diff', 'reach_diff', 'strike_diff', 'strike_acc_diff', 'strikes_absorbed_diff', 'strikes_defense_diff', 'takedown_attempts_diff', 'takedown_acc_diff', 'takedown_defense_diff', 'submission_attempt_diff', 'age_diff', 'height_diff']].copy(0)
+
+    return colby_diff
+
+
+# In[1]:
+
+
+# colby_diff = get_colby()
+
+
+# In[2]:
+
+
+# colby_diff
+
+
+# In[4]:
+
+
+def get_jorge(): 
+   
+    # imports
+    import pandas as pd
+    import numpy as np
+    # Ignore Warnings
+    import warnings
+    warnings.filterwarnings("ignore")
+    
+    # read .csv
+    jorge = pd.read_csv('Last 10 Masvidal Fights.csv')
+    
+    
+    # Calculate the difference in stats between fighter1 and fighter2. Save to new column. 
+    jorge['weight_diff'] = jorge.weight_f1 - jorge.weight_f2
+    jorge['reach_diff'] = jorge.reach_f1 - jorge.reach_f2
+    jorge['strike_diff'] = jorge.strikes_f1 - jorge.strikes_f2
+    jorge['strike_acc_diff'] = jorge.strike_acc_f1 - jorge.strike_acc_f2
+    jorge['strikes_absorbed_diff'] = jorge.strikes_absorbed_f1 - jorge.strikes_absorbed_f2
+    jorge['strikes_defense_diff'] = jorge.strike_defense_f1 - jorge.strike_defense_f2
+    jorge['strikes_defense_diff'] = jorge.strike_defense_f1 - jorge.strike_defense_f2
+    jorge['takedown_attempts_diff'] = jorge.takedowns_f1 - jorge.takedowns_f2
+    jorge['takedown_acc_diff'] = jorge.takedown_acc_f1 - jorge.takedown_acc_f2
+    jorge['takedown_defense_diff'] = jorge.takedown_def_f1 - jorge.takedown_def_f2
+    jorge['submission_attempt_diff'] = jorge.sub_attempt_f1 - jorge.sub_attempt_f2
+    jorge['age_diff'] = jorge.age_days_f1 - jorge.age_days_f2
+    jorge['height_diff'] = jorge.height_in_f1 - jorge.height_in_f2
+
+    # Create df with desired difference columns
+    jorge_diff = jorge[['event_name', 'fighter1', 'fighter2', 'outcome', 'stance_f1', 'stance_f2', 'weight_diff', 'reach_diff', 'strike_diff', 'strike_acc_diff', 'strikes_absorbed_diff', 'strikes_defense_diff', 'takedown_attempts_diff', 'takedown_acc_diff', 'takedown_defense_diff', 'submission_attempt_diff', 'age_diff', 'height_diff']].copy(0)
+
+    return jorge_diff
+
+
+# In[5]:
+
+
+# jorge_diff = get_jorge()
+
+
+# In[6]:
+
+
+# jorge_diff.head()
+
+
 # ## Split Data
 
 # In[53]:
