@@ -218,10 +218,10 @@ def age_diff_viz():
 # age_diff = age_diff_viz()
 
 
-# In[70]:
+# In[81]:
 
 
-def takedown_defense_viz():
+def takedown_acc_viz():
 
     plt.rcParams["figure.figsize"] = [12.00, 6.50]
     plt.rcParams["figure.autolayout"] = True
@@ -236,10 +236,10 @@ def takedown_defense_viz():
     fig.show();
 
 
-# In[77]:
+# In[82]:
 
 
-# takedown_def = takedown_defense_viz()
+# takedown_acc = takedown_acc_viz()
 
 
 # In[ ]:
